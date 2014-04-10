@@ -24,14 +24,14 @@ jinja_environment = jinja2.Environment(
   loader=jinja2.FileSystemLoader(os.path.dirname(__file__)))
 
 class Request(db.Model):
-  body = db.StringProperty()
-  bodyFile = db.StringProperty()
-  remoteAddr = db.StringProperty()
-  url = db.StringProperty(required=True)
-  path = db.StringProperty()
-  queryString = db.StringProperty()
-  headers = db.StringProperty()
-  cookies = db.StringProperty()
+  body = db.TextProperty()
+  bodyFile = db.TextProperty()
+  remoteAddr = db.TextProperty()
+  url = db.TextProperty(required=True)
+  path = db.TextProperty()
+  queryString = db.TextProperty()
+  headers = db.TextProperty()
+  cookies = db.TextProperty()
 
 class MainHandler(webapp2.RequestHandler):
 

@@ -5,9 +5,25 @@
   </head>
   <body>
     <script type="text/javascript">
+      var xhr = new XMLHttpRequest();
+
+      xhr.onload = function() {
+        console.log('load');
+      };
+
+      xhr.ontimeout = function() {
+        console.log('timeout');
+      };
+
+      xhr.onerror = function() {
+        console.log('error');
+      };
+
+      xhr.open('POST', 'http://mockmetricsserver.appspot.com/', true);
+      xhr.send();
     </script>
     <div id="container">
-			<h1>Test</h1>
+      <h1>Test</h1>
     </div>
   </body>
 </html>
